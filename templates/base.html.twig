@@ -2,11 +2,22 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
-        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="coiffeuse à domicile à Dijon et dans la plaine de Saône, spécialisée en perruques médicales, onco-coiffure et traitements des différents traumatismes capillaires">
+        <title>
+            {% block title %}
+            Isa Coiffe perruques médicales à Dijon
+            {% endblock %}
+        </title>
+        <link rel="icon" type="image/png" href="{{ asset('pictures/favicon.png') }}">
+     
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
+            <link rel="stylesheet" type="text/css" href="{{ asset('style/style.css')}}">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
         {% endblock %}
 
         {% block javascripts %}
@@ -14,6 +25,50 @@
         {% endblock %}
     </head>
     <body>
-        {% block body %}{% endblock %}
+        {% block header %}
+        <!-- EN-TETE -->
+        <header>
+            <h1>Isa Coiffe Dijon</h1>
+            <span class="separator"></span>
+            <h2>Coiffeuse, perruquière diplômée en onco-coiffure</h2>
+
+            <!--LOGO-->
+            <img src="{{ asset('pictures/logoCropped.png')}}" alt="logo" id="logo">
+        </header>
+
+        <!--MENU DE NAVIGATION-->
+        <nav>
+            <ul>
+            <li><a href="#" title="accueil">Accueil</a></li>
+            <li><a href="#" title="galerie photo">Gallerie</a></li>
+            <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        {% endblock %}
+
+        {% block body %}
+        <!--HORAIRES ET CONTACTS-->
+        <div class="conteneur"> 
+            <section>
+                <h3>Horaires et Contact</h3>
+
+                <div id='contact'>
+                    <p>Je suis à votre service du <b>lundi au vendredi de 09:00 à 19:30</b> et le <b>samedi de 09:00 à 13:00</b>.</p>
+                    <p>Si vous souhaitez me contacter n'hésitez
+                    pas à m'envoyer un email à <b><a href="mailto:isabel.questel@gmail.com">isabel.questel@gmail.com</a></b> </br>
+                    ou à m'appeler <b><a href="tel:+33672400799">06.72.40.07.99</a></b>.
+                    </p>
+                    <p id="siret">Mon numéro d'agrément sécurité sociale est le 21269966 4</br>
+                    SIRET 41484918200061 - Code NAF 9602A</p>
+                </div>
+            </section>
+        </div>
+        {% endblock %}
+
+        {% block footer %}
+        <footer>
+            <p>2022 &copy; Nina SELLAL</p>
+        </footer>
+        {% endblock %}
     </body>
 </html>
