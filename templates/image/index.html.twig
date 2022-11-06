@@ -7,22 +7,29 @@
 
 {% block body %}
 
-<div class="container mt-4">
+<div class="container my-4">
 
     <h1>Gérer les photos</h1>
 
     <a href="{{ path('create-image')}}" class="btn btn-primary my-4">Ajouter une photo</a>
 
-
+    <div class="d-flex">
     {% for image in images %}
-        <div class="card" style="width: 12rem;">
+        <div class="card my-2" style="width: 12rem;">
             <img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="card-img-top" alt="...">
             <div class="card-body">
                 <a href="{{ path('delete-image', {id: image.id}) }}" class="btn btn-danger">Supprimer</a>
             </div>
         </div>
     {% endfor %}
+    </div>
 
 </div>
 
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <p>2022 &copy; Nina SELLAL</p>
+    </footer>
 {% endblock %}

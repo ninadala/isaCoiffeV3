@@ -16,11 +16,11 @@ class Image
     #[ORM\Column]
     private ?int $id = null;
 
-    #[Vich\UploadableField(mapping:'images', fileNameProperty:"alt")]
+    #[Vich\UploadableField(mapping:'images', fileNameProperty:"image")]
     private ?File $imageFile = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $alt = null;
+    private ?string $image = null;
 
     #[ORM\Column(type: 'datetime')]
     private ?\DateTimeInterface $updated_at = null;
@@ -31,21 +31,21 @@ class Image
     }
 
     /**
-     * Get the value of alt
+     * Get the value of image
      */ 
-    public function getAlt(): ?string
+    public function getImage(): ?string
     {
-        return $this->alt;
+        return $this->image;
     }
 
     /**
-     * Set the value of alt
+     * Set the value of image
      *
      * @return  self
      */ 
-    public function setAlt(?string $alt): void
+    public function setImage(?string $image): void
     {
-        $this->alt = $alt;
+        $this->image = $image;
     }
 
     /**
