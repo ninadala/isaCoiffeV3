@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+{{  parent() }}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+{% endblock %}
+
+{% block body %}
+
+<div class="container mt-4">
+
+<h1>Gérer les photos</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for image in images %}
+        <tr>
+            <td class="imageAdmin"><img src="{{ vich_uploader_asset(image, 'imageFile') }}"></td>
+            <td>
+                <a href="{{ path('delete-image', {id: image.id}) }}" class="btn btn-danger">Supprimer</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<a href="{{ path('create-image')}}" class="btn btn-primary">Ajouter une photo</a>
+</div>
+
+{% endblock %}
