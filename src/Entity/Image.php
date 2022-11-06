@@ -22,6 +22,9 @@ class Image
     #[ORM\Column(length: 255)]
     private ?string $image = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $alt = null;
+
     #[ORM\Column(type: 'datetime')]
     private ?\DateTimeInterface $updated_at = null;
 
@@ -78,6 +81,26 @@ class Image
     public function setUpdatedAt(\DateTime $updated_at): self
     {
         $this->updated_at = $updated_at;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of alt
+     */ 
+    public function getAlt()
+    {
+        return $this->alt;
+    }
+
+    /**
+     * Set the value of alt
+     *
+     * @return  self
+     */ 
+    public function setAlt($alt)
+    {
+        $this->alt = $alt;
 
         return $this;
     }

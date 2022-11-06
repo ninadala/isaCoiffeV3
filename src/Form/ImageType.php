@@ -17,9 +17,9 @@ class ImageType extends AbstractType
             ->add('imageFile', VichImageType::class, [
                 'label' => 'image'
             ])
-            // ->add('alt', TextType::class, [
-            //     'label' => 'titre'
-            // ])
+            ->add('alt', TextType::class, [
+                'label' => 'titre'
+            ])
         ;
     }
 

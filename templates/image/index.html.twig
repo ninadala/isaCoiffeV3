@@ -15,9 +15,10 @@
 
     <div class="d-flex">
     {% for image in images %}
-        <div class="card my-2" style="width: 12rem;">
-            <img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="card-img-top" alt="...">
+        <div class="card my-2 mx-2" style="width: 12rem;">
+            <img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="card-img-top">
             <div class="card-body">
+                <h6>{{image.alt}}</h6>
                 <a href="{{ path('delete-image', {id: image.id}) }}" class="btn btn-danger">Supprimer</a>
             </div>
         </div>
