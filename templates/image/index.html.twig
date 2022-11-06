@@ -9,28 +9,20 @@
 
 <div class="container mt-4">
 
-<h1>Gérer les photos</h1>
+    <h1>Gérer les photos</h1>
 
-<table>
-    <thead>
-        <tr>
-            <th>Titre</th>
-            <th>Actions</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for image in images %}
-        <tr>
-            <td class="imageAdmin"><img src="{{ vich_uploader_asset(image, 'imageFile') }}"></td>
-            <td>
+    <a href="{{ path('create-image')}}" class="btn btn-primary my-4">Ajouter une photo</a>
+
+
+    {% for image in images %}
+        <div class="card" style="width: 12rem;">
+            <img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="card-img-top" alt="...">
+            <div class="card-body">
                 <a href="{{ path('delete-image', {id: image.id}) }}" class="btn btn-danger">Supprimer</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </tbody>
-</table>
+            </div>
+        </div>
+    {% endfor %}
 
-<a href="{{ path('create-image')}}" class="btn btn-primary">Ajouter une photo</a>
 </div>
 
 {% endblock %}
