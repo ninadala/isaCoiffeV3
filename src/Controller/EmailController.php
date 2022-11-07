@@ -18,7 +18,7 @@ class EmailController extends AbstractController
         ->text('Bienvenue chez ISA COIFFE')
         ->html('
         <h1>Bienvenue chez ISA COIFFE</h1>
-        <p>Je viens de créér votre compte utilisateur, vous pouvez désormais :</p></br>
+        <p>Je viens de créer votre compte utilisateur, vous pouvez désormais :</p></br>
         <ul>
             <li>Ajouter/modifier/supprimer des photos de la gallerie : </li>
             <li>Ajouter/modifier/supprimer des tarifs : </li>

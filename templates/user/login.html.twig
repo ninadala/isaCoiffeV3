@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    {{ parent()}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+{% endblock %}
+
+{% block body %}
+
+        <div class="d-flex">
+        
+            {% if error %}
+                <div class="alert alert-danger"> {{ error.messageKey }} </div>
+            {% endif %}
+            
+
+            <div class="d-flex centered-element py-4 px-4" style="width: 18rem">
+                <form method="post" class="container">
+                    <label for="email" class="form-label">Email</label>
+                    <input id="email" type="text" name="_username" value="{{ last_username }}" class="form-control">
+                    <label for="password" class="form-label">Mot de Passe</label>
+                    <div class="input-group">
+                        <input id="user_password" type="password" name="_password" class="form-control">
+                        <span role="button" class="input-group-text" onClick="togglePassword()">
+                                <i class="bi bi-eye" id="eye"></i>
+                                <i class="bi bi-eye-slash d-none" id="eye-slash"></i>
+                        </span>
+                    </div>
+                    <input type="hidden" name="_target_path" value="/">
+                    <input type="submit" value="Connexion" class="btn btn-success mt-2" id="btnLogin">
+                </form>
+            </div>
+
+        </div>
+    
+{% endblock %}
