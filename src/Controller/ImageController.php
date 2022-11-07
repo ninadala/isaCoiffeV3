@@ -51,4 +51,14 @@ class ImageController extends AbstractController
 
         return $this->redirectToRoute('admin-image');
     }
+
+    #[Route('/galerie', name: 'galerie')]
+    public function galerie(ManagerRegistry $doctrine): Response
+    {
+        $repository = $doctrine->getRepository(Image::class);
+        $images = $repository->findAll();
+        return $this->render('page/galerie.html.twig', [
+            'images' => $images,
+        ]);
+    }
 }
