@@ -1,63 +1,60 @@
 {% extends 'base.html.twig' %}
-{% block stylesheets %}
-    {{ parent()}}
-{% endblock %}
 
 {% block body %}
 <div class="contener">
-    <!-- PRESENTATION PERSO -->
-    <section>
-        <h3>Bienvenue</h3>
-          <img src="{{ asset('pictures/isaPortrait.jpg')}}" alt="Portrait de Isabelle"
-              class="img-fluid rounded-circle float-md-end float-lg-end float-xl-end 
-              ms-lg-4 ms-xl-4 ms-xxl-4 d-none d-sm-none d-md-block" id="portraitIsa">
+      <!-- PRESENTATION PERSO -->
+      <section>
+          <h3>Bienvenue</h3>
+            <img src="{{ asset('pictures/isaPortrait.jpg')}}" alt="Portrait de Isabelle"
+                class="img-fluid rounded-circle float-md-end float-lg-end float-xl-end 
+                ms-lg-4 ms-xl-4 ms-xxl-4 d-none d-sm-none d-md-block" id="portraitIsa">
 
-           <p class="center-text">Je suis Isabelle, coiffeuse / perruquière / visagiste passionnée et au service de
-          ma clientèle depuis 30 ans. <br> <br>
-          Bien souvent l'épanouissement personnel passe par l'image que l'on a de soi. <br></br>
-          Ainsi afin de vous accompagner du mieux possible dans la réappropriation de votre corps, je viens à vous sur
-          votre lieu de vie (domicile, milieu hospitalier, ephad, maison de convalescence...) sur tout le bassin dijonnais
-           et la plaine de Saône pour vous coiffer ou vous présenter différentes perruques médicales. <br>
-        </p>
-    </section>
+            <p class="center-text">Je suis Isabelle, coiffeuse / perruquière / visagiste passionnée et au service de
+            ma clientèle depuis 30 ans. <br> <br>
+            Bien souvent l'épanouissement personnel passe par l'image que l'on a de soi. <br></br>
+            Ainsi afin de vous accompagner du mieux possible dans la réappropriation de votre corps, je viens à vous sur
+            votre lieu de vie (domicile, milieu hospitalier, ephad, maison de convalescence...) sur tout le bassin dijonnais
+            et la plaine de Saône pour vous coiffer ou vous présenter différentes perruques médicales. <br>
+          </p>
+      </section>
 
-    <!-- PRESTATIONS-->
-    <section>
-        <h3>Prestations</h3>
+      <!-- PRESTATIONS-->
+      <section>
+          <h3>Prestations</h3>
 
-        <!--CONTENEUR-->
-        <div id="projets">
+          <!--CONTENEUR-->
+          <div id="projets">
 
-          <!--ONCO-COIFFURE-->
-          <div class="projet">
-            <a href="#">
-              <div class="picture">
-                <img src="{{ asset('pictures/outils.jpg')}}" alt="onco-coiffure">
-              </div>
-              <span>Onco-coiffure</span>
-            </a>
+            <!--ONCO-COIFFURE-->
+            <div class="projet">
+              <a href="#">
+                <div class="picture">
+                  <img src="{{ asset('pictures/outils.jpg')}}" alt="onco-coiffure">
+                </div>
+                <span>Onco-coiffure</span>
+              </a>
+            </div>
+
+            <!--PERRUQUES ET EXTENSIONS-->
+            <div class="projet">
+              <a href="#">
+                <div class="picture">
+                  <img src="{{ asset('pictures/perruque1Cropped.png')}}" alt="perruques">
+                </div>
+                <span>Perruquerie</span>
+              </a>
+            </div>
+
+            <!--COIFFURE CLASSIQUE-->
+            <div class="projet">
+              <a href="#">
+                <div class="picture">
+                  <img src="{{ asset('pictures/coiffureCropped.png')}}" alt="coiffure classique">
+                </div>
+                <span>Coiffure classique et cérémonies</span>
+              </a>
+            </div>
           </div>
-
-          <!--PERRUQUES ET EXTENSIONS-->
-          <div class="projet">
-            <a href="#">
-              <div class="picture">
-                <img src="{{ asset('pictures/perruque1Cropped.png')}}" alt="perruques">
-              </div>
-              <span>Perruquerie</span>
-            </a>
-          </div>
-
-          <!--COIFFURE CLASSIQUE-->
-          <div class="projet">
-            <a href="#">
-              <div class="picture">
-                <img src="{{ asset('pictures/coiffureCropped.png')}}" alt="coiffure classique">
-              </div>
-              <span>Coiffure classique et cérémonies</span>
-            </a>
-          </div>
-        </div>
-    </section>
+      </section>
   </div>
 {% endblock %}

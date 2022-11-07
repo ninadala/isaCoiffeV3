@@ -5,23 +5,20 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <meta name="description" content="coiffeuse à domicile à Dijon et dans la plaine de Saône, spécialisée en perruques médicales, onco-coiffure et traitements des différents traumatismes capillaires">
-        <title>
-            {% block title %}
-            Isa Coiffe perruques médicales à Dijon
-            {% endblock %}
-        </title>
+        <title>{% block title %}Isa Coiffe perruques médicales à Dijon{% endblock %}</title>
         <link rel="icon" type="image/png" href="{{ asset('pictures/favicon.png') }}">
-     
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
-            <link rel="stylesheet" type="text/css" href="{{ asset('style/style.css')}}">
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+            <link rel="stylesheet" type="text/css" href="{{ asset('style/style.css')}}">
+        
         {% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
         {% endblock %}
     </head>
     <body>
@@ -39,11 +36,11 @@
         <!--MENU DE NAVIGATION-->
         <nav>
             <ul>
-            <li><a href="/" title="accueil">Accueil</a></li>
-            <li><a href="/galerie" title="galerie photo">Galerie</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="/" title="accueil" class="link-dark text-decoration-none">Accueil</a></li>
+            <li><a href="/galerie" title="galerie photo" class="link-dark text-decoration-none">Galerie</a></li>
+            <li><a href="#contact" class="link-dark text-decoration-none">Contact</a></li>
             {% if is_granted('ROLE_USER') %}
-            <li><a href="/logout" id="logoutLink">Se déconnecter</a></li>
+            <li><a href="/logout">Se déconnecter</a></li>
             {% endif %}
             </ul>
         </nav>
