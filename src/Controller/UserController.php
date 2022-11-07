@@ -54,7 +54,7 @@ class UserController extends AbstractController
     }
 
     #[Route('/user/new', name:"new-user")]
-    // #[IsGranted('ROLE_ADMIN')]
+    #[IsGranted('ROLE_ADMIN')]
     public function create(UserPasswordHasherInterface $userPasswordHasher, Request $request, ManagerRegistry $doctrine, EmailController $email, MailerInterface $mailer): Response
     {
         $user = new User();

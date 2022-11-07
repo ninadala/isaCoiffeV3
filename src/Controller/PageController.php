@@ -15,4 +15,12 @@ class PageController extends AbstractController
             'controller_name' => 'PageController',
         ]);
     }
+
+    #[Route('/galerie', name: 'galerie')]
+    public function galerie(): Response
+    {
+        return $this->render('page/galerie.html.twig', [
+            'controller_name' => 'PageController',
+        ]);
+    }
 }
