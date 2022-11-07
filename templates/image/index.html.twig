@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block stylesheets %}
-{{  parent() }}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+{{  parent() }}
 {% endblock %}
 
 {% block body %}
 
 <div class="container my-4">
 
-    <h1>Gérer les photos</h1>
+    <h1>Gérer les photos de la galerie</h1>
 
     <a href="{{ path('create-image')}}" class="btn btn-primary my-4">Ajouter une photo</a>
 

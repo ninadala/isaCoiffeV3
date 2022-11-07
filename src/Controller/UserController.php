@@ -17,7 +17,7 @@ use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 
 class UserController extends AbstractController
 {
-    #[Route('/user', name: 'user-home')]
+    #[Route('/admin-user', name: 'admin-user')]
     #[IsGranted('ROLE_ADMIN')]
     public function index(ManagerRegistry $doctrine): Response
     {
@@ -71,7 +71,7 @@ class UserController extends AbstractController
             $em->persist($user);
             $em->flush();
             $email->sendEmailNewUser($mailer, $user);
-            return $this->redirectToRoute('user-home');
+            return $this->redirectToRoute('admin-user');
         }
         return $this->render('user/form.html.twig', [
             "user_form" => $form->createView()

@@ -40,6 +40,10 @@
             <li><a href="/galerie" title="galerie photo" class="link-dark text-decoration-none">Galerie</a></li>
             <li><a href="#contact" class="link-dark text-decoration-none">Contact</a></li>
             {% if is_granted('ROLE_USER') %}
+            <li><a href="/admin-image">Admin photos</a></li>
+                {% if is_granted('ROLE_ADMIN') %}
+                <li><a href="/admin-user">Admin utilisateurs</a></li>
+                {% endif %}
             <li><a href="/logout">Se déconnecter</a></li>
             {% endif %}
             </ul>
