@@ -1,0 +1,36 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+<div class="contener">
+    <!-- PRESENTATION PRESTATION -->
+    <section>
+        <h3>Onco-Coiffure</h3>
+        
+        <p>Mon rôle en tant qu'onco-coiffeuse est de prendre en charge de manière globale et personnalisée toute personne
+            atteinte d'un cancer afin de l'accompagner dans la réappropriation de son corps et de sa confiance en elle.</br>
+            </br>
+            Je suis à votre écoute afin de vous conseiller avec expertise afin de trouver des solutions capillaires indécelables, adaptées à votre budget,
+            confortables, et qui respectent votre cuir chevelu et la repousse de vos cheveux. </br></br>
+
+            Pour que cela soit plus confortable et confidentiel je viens à vous sur votre lieu de vie que ce soit à votre domicile
+            ou en milieu médical. 
+        </p>
+
+        <div class="prestations">
+            <img src="{{ asset('pictures/outils.jpg')}}" alt="outils du coiffeur">
+        </div>
+
+        <div>
+            <p>Il n'est pas possible de donner un tarif unique pour cette prestation. <br>
+              <br>
+              Chaque accompagnement étant différent je préfère prendre le temps d'échanger
+              avec vous, afin de bien cerner vos besoin et vous présenter un devis adapté à votre
+              situation.
+            </p>
+          
+        </div>
+    </section>
+</div>
+
+{% endblock %}

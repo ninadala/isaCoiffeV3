@@ -12,7 +12,14 @@ class PageController extends AbstractController
     public function index(): Response
     {
         return $this->render('page/index.html.twig', [
-            'controller_name' => 'PageController',
+            
+        ]);
+    }
+    #[Route('/onco-coiffure', name: 'onco-coiffure')]
+    public function oncoCoiffure(): Response
+    {
+        return $this->render('page/onco.html.twig', [
+            
         ]);
     }
 
