@@ -12,7 +12,6 @@ class PageController extends AbstractController
     public function index(): Response
     {
         return $this->render('page/index.html.twig', [
-            
         ]);
     }
 
@@ -20,7 +19,6 @@ class PageController extends AbstractController
     public function oncoCoiffure(): Response
     {
         return $this->render('page/onco.html.twig', [
-            
         ]);
     }
 
@@ -28,7 +26,6 @@ class PageController extends AbstractController
     public function perruquerie(): Response
     {
         return $this->render('page/perruquerie.html.twig', [
-            
         ]);
     }
 

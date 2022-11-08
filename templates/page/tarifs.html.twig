@@ -1,0 +1,48 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    {{ parent()}}
+{% endblock %}
+
+{% block body %}
+
+<div class="contener">
+    <!-- PRESENTATION PRESTATION -->
+    <section>
+        <h3>Coiffure et cérémonies</h3>
+        
+        <p>Je réalise des coupes femme, homme et enfant, des mises en forme temporaires (mise en plis ou brushing), 
+            des colorations, des mèches et des permanentes. <br>
+            <br>
+            Je viens à vous sur votre lieu de vie (domicile, milieu hospitalier, ephad, maison de convalescence...) 
+            sur tout le bassin dijonnais et la plaine de Saône. 
+          
+        </p>
+
+        <div class="prestations">
+            <img src="{{ asset('pictures/coiffureCropped.png')}}" alt="coiffure classique">
+        </div>
+
+        <h3>tarifs</h3>
+
+        <div class="d-flex justify-content-center">
+            <div class="table-responsive-xs table-responsive-sm">
+                <table class="table table-hover table-borderless">
+                    <tbody>
+                        {% for rate in rates %}
+                        <tr>
+                            <td>{{ rate.title }}</td>
+                            <td class="fst-italic d-none d-sm-none d-md-block"> à partir de </td>
+                            <td>{{ rate.price }} €</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

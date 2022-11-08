@@ -41,6 +41,7 @@
             <li><a href="#contact" class="link-dark text-decoration-none">Contact</a></li>
             {% if is_granted('ROLE_USER') %}
             <li><a href="/admin-image">Admin photos</a></li>
+            <li><a href="/admin-tarifs">Admin tarifs</a></li>
                 {% if is_granted('ROLE_ADMIN') %}
                 <li><a href="/admin-user">Admin utilisateurs</a></li>
                 {% endif %}

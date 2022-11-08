@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+{{  parent() }}
+{% endblock %}
+
+{% block body %}
+
+<div class="container my-4">
+
+    <h1>Gérer les tarifs</h1>
+
+    <a href="{{ path('create-rate')}}" class="btn btn-primary my-4">Ajouter un tarif</a>
+
+    <div class="d-flex">
+    {% for rate in rates %}
+            <ul class="list-group">
+                <li class="list-group-item">{{ rate.title }} : {{ rate.price }} 
+                    <a href="{{ path('edit-rate', {id: rate.id}) }}" class="btn btn-success">Modifier</a>
+                    <a href="{{ path('delete-rate', {id: rate.id}) }}" class="btn btn-danger">Supprimer</a>
+                </li>
+            </ul>
+        </div>
+    {% endfor %}
+    </div>
+
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    <footer>
+        <p>2022 &copy; Nina SELLAL</p>
+    </footer>
+{% endblock %}
