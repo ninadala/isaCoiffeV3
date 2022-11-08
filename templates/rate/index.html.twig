@@ -7,25 +7,25 @@
 
 {% block body %}
 
-<div class="container my-4">
+    <div class="container my-4">
 
-    <h1>Gérer les tarifs</h1>
+        <h1>Gérer les tarifs</h1>
 
-    <a href="{{ path('create-rate')}}" class="btn btn-primary my-4">Ajouter un tarif</a>
+        <a href="{{ path('create-rate')}}" class="btn btn-primary my-4">Ajouter un tarif</a>
 
-    <div class="d-flex">
-    {% for rate in rates %}
-            <ul class="list-group">
-                <li class="list-group-item">{{ rate.title }} : {{ rate.price }} 
-                    <a href="{{ path('edit-rate', {id: rate.id}) }}" class="btn btn-success">Modifier</a>
-                    <a href="{{ path('delete-rate', {id: rate.id}) }}" class="btn btn-danger">Supprimer</a>
-                </li>
-            </ul>
+        <div class="d-flex">
+        {% for rate in rates %}
+                <ul class="list-group">
+                    <li class="list-group-item">{{ rate.title }} : {{ rate.price }} 
+                        <a href="{{ path('edit-rate', {id: rate.id}) }}" class="btn btn-success">Modifier</a>
+                        <a href="{{ path('delete-rate', {id: rate.id}) }}" class="btn btn-danger">Supprimer</a>
+                    </li>
+                </ul>
+            </div>
+        {% endfor %}
         </div>
-    {% endfor %}
-    </div>
 
-</div>
+    </div>
 
 {% endblock %}
 

@@ -7,13 +7,13 @@
         <meta name="description" content="coiffeuse à domicile à Dijon et dans la plaine de Saône, spécialisée en perruques médicales, onco-coiffure et traitements des différents traumatismes capillaires">
         <title>{% block title %}Isa Coiffe perruques médicales à Dijon{% endblock %}</title>
         <link rel="icon" type="image/png" href="{{ asset('pictures/favicon.png') }}">
+
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
             <link rel="preconnect" href="https://fonts.googleapis.com">
             <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
             <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
             <link rel="stylesheet" type="text/css" href="{{ asset('style/style.css')}}">
-        
         {% endblock %}
 
         {% block javascripts %}
@@ -22,6 +22,7 @@
             <script src="{{ asset('scripts/functions.js') }}"></script>
         {% endblock %}
     </head>
+    
     <body>
         {% block header %}
         <!-- EN-TETE -->

@@ -20,24 +20,24 @@ class UserType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class, [
-                "label" => "Email",
-                "required" => true,
-                "constraints" => [ new Email(["message" => "Vous devez entrer un email valide"])]
+                "label"         => "Email",
+                "required"      => true,
+                "constraints"   => [ new Email(["message" => "Vous devez entrer un email valide"])]
             ])
             ->add('roles', ChoiceType::class, [
-                "label" => "Rôle",
-                "required" => true,
-                "expanded" => false,
-                "multiple" => false,
-                'choices' => [
+                "label"         => "Rôle",
+                "required"      => true,
+                "expanded"      => false,
+                "multiple"      => false,
+                'choices'       => [
                     'Administrateur' => 'ROLE_ADMIN',
                     'IsaCoiffe' => 'ROLE_USER'
                 ]
             ])
             ->add('password', PasswordType::class, [
-                "label" => "Mot de passe",
-                "required" => true,
-                "constraints" => [
+                "label"         => "Mot de passe",
+                "required"      => true,
+                "constraints"   => [
                     new NotBlank([
                         "message" => "Le mot de passe ne peut pas être vide !"
                     ])

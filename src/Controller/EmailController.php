@@ -20,13 +20,9 @@ class EmailController extends AbstractController
         <h1>Bienvenue chez ISA COIFFE</h1>
         <p>Je viens de créer votre compte utilisateur, vous pouvez désormais :</p></br>
         <ul>
-            <li>Ajouter/modifier/supprimer des photos de la gallerie : </li>
-            <li>Ajouter/modifier/supprimer des tarifs : </li>
-            <li>Ajouter/modifier/supprimer les informations concernant votre entreprise : </li>
-        </ul></br>
-        <p>Veuillez s\'il vous plait changer ce mot de passe dès votre première connexion</p>
-        <a href="#" target="_blank" title="site ISACOIFFE">www.isacoiffe.fr/login</a>
-        ');
+            <li>Ajouter/modifier/supprimer des photos de la gallerie : <a href="/admin-image">Gérer les photos</a></li>
+            <li>Ajouter/modifier/supprimer des tarifs : <a href="/admin-tarifs">Gérer les tarifs</a></li>
+        </ul>');
 
         $mailer->send($email);
     }

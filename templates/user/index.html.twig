@@ -6,33 +6,31 @@
 {% endblock %}
 
 {% block body %}
-<div class="container mt-5">
+    <div class="container mt-5">
 
-    <div class="d-flex my-3" >    
-        <div class="d-flex ms-1">
-        {% if is_granted('ROLE_ADMIN') %}
-            <a  class="btn btn-primary" href="/user/new" id="newButton"><i class="fa-solid fa-plus"></i> Utilisateur</a>
-        {% endif %}
-        </div>
-    </div>
-
-    {% for user in users %}
-        <ul class="list-group">
-            {% if user.roles[0] =='ROLE_ADMIN' %}
-            <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center" id="listGroupA">
-            {% else %}
-            <li class="list-group-item list-group-item-warning d-flex justify-content-between align-items-center" id="listGroupB">   
+        <div class="d-flex my-3" >    
+            <div class="d-flex ms-1">
+            {% if is_granted('ROLE_ADMIN') %}
+                <a  class="btn btn-primary" href="/user/new" id="newButton"><i class="fa-solid fa-plus"></i> Utilisateur</a>
             {% endif %}
-                {{ user.email }}
-                <div class="d-flex">
-                    <a href="{{ path('edit-user', {id: user.id}) }}" class="btn btn-success">Modifier</a>
-                    <a href="{{ path('delete-user', {id: user.id}) }}" class="btn btn-danger">Supprimer</a>
-                </div>
-            </li>
-        </ul>
-    {% endfor %}
+            </div>
+        </div>
 
-</div>
-
+        {% for user in users %}
+            <ul class="list-group">
+                {% if user.roles[0] =='ROLE_ADMIN' %}
+                <li class="list-group-item list-group-item-primary d-flex justify-content-between align-items-center" id="listGroupA">
+                {% else %}
+                <li class="list-group-item list-group-item-warning d-flex justify-content-between align-items-center" id="listGroupB">   
+                {% endif %}
+                    {{ user.email }}
+                    <div class="d-flex">
+                        <a href="{{ path('edit-user', {id: user.id}) }}" class="btn btn-success">Modifier</a>
+                        <a href="{{ path('delete-user', {id: user.id}) }}" class="btn btn-danger">Supprimer</a>
+                    </div>
+                </li>
+            </ul>
+        {% endfor %}
+    </div>
 
 {% endblock %}

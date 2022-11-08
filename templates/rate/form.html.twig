@@ -8,17 +8,22 @@
 
 {% block body %}
 
-<div class="container centered-element py-4 px-4">
+    <div class="container py-4 px-4">
 
-    <h1>Ajouter un tarif</h1>
+        <h1>Ajouter un tarif</h1>
 
-    {{ form_start(rate_form) }}
-    {{ form_widget(rate_form) }}
-    <button>Ajouter</button>
+        {{ form_start(rate_form) }}
+        {{ form_widget(rate_form) }}
+        <button>Ajouter</button>
 
-    {{ form_end(rate_form) }}
+        {{ form_end(rate_form) }}
 
-</div>
+    </div>
 
+{% endblock %}
 
+{% block footer %}
+    <footer>
+        <p>2022 &copy; Nina SELLAL</p>
+    </footer>
 {% endblock %}

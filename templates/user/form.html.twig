@@ -7,19 +7,19 @@
 {% endblock %}
 
 {% block body %}
-<div class="d-flex mt-5">
-    {{ form_start(user_form, {'attr': {'class': 'container'}})}}
-    {{ form_row(user_form.email)}}
-    {{ form_label(user_form.password)}}
-    <div class="input-group">
-            {{form_widget(user_form.password)}}
-            <span role="button" class="input-group-text" onClick="togglePassword()">
-                    <i class="bi bi-eye" id="eye"></i>
-                    <i class="bi bi-eye-slash d-none" id="eye-slash"></i>
-            </span>
+    <div class="d-flex mt-5">
+        {{ form_start(user_form, {'attr': {'class': 'container'}})}}
+        {{ form_row(user_form.email)}}
+        {{ form_label(user_form.password)}}
+        <div class="input-group">
+                {{form_widget(user_form.password)}}
+                <span role="button" class="input-group-text" onClick="togglePassword()">
+                        <i class="bi bi-eye" id="eye"></i>
+                        <i class="bi bi-eye-slash d-none" id="eye-slash"></i>
+                </span>
+        </div>
+        {{ form_errors(user_form.password)}}
+        {{ form_rest(user_form)}}
+        <input class="btn btn-success mt-3" type="submit" value="Ok" id="btnSubmit">
     </div>
-    {{ form_errors(user_form.password)}}
-    {{ form_rest(user_form)}}
-    <input class="btn btn-success mt-3" type="submit" value="Ok" id="btnSubmit">
-</div>
 {% endblock %}
