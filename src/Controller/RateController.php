@@ -25,6 +25,7 @@ class RateController extends AbstractController
     }
     
     #[Route('/admin-tarifs', name: 'admin-tarifs')]
+    #[IsGranted('ROLE_USER')]
     public function index(ManagerRegistry $doctrine): Response
     {
         $repository = $doctrine->getRepository(Rate::class);

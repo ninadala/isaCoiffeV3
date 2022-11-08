@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Entity\Image;
 use App\Form\ImageType;
 use Doctrine\Persistence\ManagerRegistry;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -13,6 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class ImageController extends AbstractController
 {
     #[Route('/admin-image', name: 'admin-image')]
+    #[IsGranted('ROLE_USER')]
     public function index(ManagerRegistry $doctrine): Response
     {
         $repository = $doctrine->getRepository(Image::class);
@@ -23,6 +25,7 @@ class ImageController extends AbstractController
     }
 
     #[Route('/create-image', name: 'create-image')]
+    #[IsGranted('ROLE_USER')]
     public function create(ManagerRegistry $doctrine, Request $request): Response
     {
         $image = new Image();
@@ -43,6 +46,7 @@ class ImageController extends AbstractController
     }
 
     #[Route('/delete-image/{id}', name: 'delete-image')]
+    #[IsGranted('ROLE_USER')]
     public function delete(ManagerRegistry $doctrine, Image $image): Response
     {
         $em = $doctrine->getManager();

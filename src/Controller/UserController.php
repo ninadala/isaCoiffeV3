@@ -86,7 +86,7 @@ class UserController extends AbstractController
         $em->remove($user);
         $em->flush();
 
-        return $this->redirectToRoute("user-home");
+        return $this->redirectToRoute("admin-user");
     }
 
     #[Route('/user/edit/{id<\d+>}', name:"edit-user")]
@@ -100,7 +100,7 @@ class UserController extends AbstractController
             $em = $doctrine->getManager();
             $em->persist($user);
             $em->flush();
-            return $this->redirectToRoute("user-home");
+            return $this->redirectToRoute("admin-user");
         }
         return $this->render('user/form.html.twig', [
             "user_form" => $form->createView()
