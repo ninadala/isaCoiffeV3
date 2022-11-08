@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+<div class="contener">
+    <!-- PRESENTATION PRESTATION -->
+    <section>
+        <h3>Perruquerie et extensions</h3>
+        
+        <p>Je suis spécialisée dans le conseil, la vente et la mise en forme de <b>perruques médicales</b>, 
+          compléments capillaires et pose d'extensions.<br> 
+          <br>
+          A travers les diverses formations que j'ai suivi j'ai appris à prendre soin des cheveux 
+          ayant subit des traumatismes dus à des chimiothérapies, une pelade, une maladie auto-immune... <br>
+          <br>
+          
+          Que votre chute de cheveux soit partielle, totale, temporaire, définitive ou que ce soit 
+          pour plus de praticité nous cheminerons ensemble afin de trouver la solution la plus adaptée
+          à votre situation. <br>
+          <br>
+          Afin de vous accompagner du mieux possible dans la réappropriation de votre corps, je viens à vous sur votre lieu de vie
+           (domicile, milieu hospitalier, ephad, maison de convalescence...)
+           sur tout le bassin dijonnais et la plaine de Saône. 
+          
+        </p>
+
+        <div class="prestations">
+            <img src="{{ asset('pictures/perruque1Cropped.png')}}" alt="perruque">
+        </div>
+
+        <div>
+            <p>Il n'est pas possible de donner un tarif unique pour cette prestation. <br>
+              <br>
+              Chaque accompagnement étant différent je préfère prendre le temps d'échanger
+              avec vous, afin de bien cerner vos besoin et vous présenter un devis adapté à votre
+              situation.
+            </p>
+          
+        </div>
+    </section>
+</div>
+{% endblock %}
