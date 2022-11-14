@@ -13,7 +13,7 @@
 
         <a href="{{ path('create-image')}}" class="btn btn-primary my-4">Ajouter une photo</a>
 
-        <div class="d-flex">
+        <div class="d-block d-md-flex d-lg-flex justify-content-center">
         {% for image in images %}
             <div class="card my-2 mx-2" style="width: 12rem;">
                 <img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="card-img-top">
