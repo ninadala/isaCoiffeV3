@@ -15,7 +15,7 @@
         <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 {% for image in images %}
-                <div class="carousel-item active" data-bs-interval="3000">
+                <div class="carousel-item {% if loop.index == 1 %}active{% endif %}" data-bs-interval="2000">
                         <img src="{{ vich_uploader_asset(image, 'imageFile') }}" class="d-block  w-50  mx-auto" alt="{{ image.alt }}">
                 </div>
                 {% endfor %}
